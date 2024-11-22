@@ -1,0 +1,75 @@
+#logo{
+    float: left;
+}
+
+header{
+    background-color: crimson;
+}
+
+body{
+    background-color: black;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+li{
+    padding: 5vh;
+    flex-wrap: wrap;
+}
+
+a{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.DropDown:hover .DropDownContent {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .DropDown:hover {
+        margin-bottom: px;
+        background-color: crimson;
+    }
+    
+    .DropDown:hover a {
+        color: white;
+    }
+    
+    .DropDownMenuItem:hover {
+        background-color: black;
+    }
+    
+    .DropDownContent {
+    display: none;
+    position: absolute;
+    background-color: crimson;
+    min-width: 8vw;
+    
+    }
+
+    .footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: crimson;
+        color: white;
+        text-align: center;
+       margin-top: 60vh;
+        bottom: 0;
+        position: fixed;
+     }
+
+     #dateDisplay {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 20px;
+        color: black;
+    }
