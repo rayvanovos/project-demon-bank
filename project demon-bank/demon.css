@@ -10,6 +10,10 @@ body{
     background-color: black;
 }
 
+.container {
+    text-align: center;
+  }
+
 ul{
     display: flex;
     justify-content: space-around;
@@ -73,3 +77,33 @@ a{
         font-size: 20px;
         color: black;
     }
+
+    #logintitle{
+        color: white;
+        text-align: center;
+    }
+
+    #username{
+        text-align: center;
+    }
+
+    #password{
+        text-align: center;
+    }
+
+    #htitle{
+        color: white;
+        text-align: center;
+        font-size: xx-large;
+    }
+
+    #usernametitle{
+        color: white;
+        text-align: center;
+    }
+
+    #passwordtitle{
+        color: white;
+        text-align: center;
+    }
+    
