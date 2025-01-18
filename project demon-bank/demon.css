@@ -193,3 +193,28 @@ a{
       #submittrans{
         width: 300px;
       }
+
+      .transactions {
+        margin-top: 30px;
+      }
+      .transactions table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .transactions table th, .transactions table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+      .transactions table th {
+        background-color: #f4f4f4;
+      }
+      .filters {
+        margin-bottom: 20px;
+      }
+      .filters label {
+        margin-right: 10px;
+      }
+      #tdp{
+        color: white;
+      }

@@ -43,11 +43,31 @@
     </div>
     <button id="submittrans" type="submit">Overmaken</button>
   </form>
-  <div id="feedback" class="success-message">
-    Transactie geslaagd! 🎉
-    <div class="feedback">
-      <img src="https://via.placeholder.com/100" alt="Bevestigingsafbeelding">
+  </div>
+
+  <div class="transactions">
+    <h2>Transactiegeschiedenis</h2>
+    <div class="filters">
+      <label for="filter">Sorteren op:</label>
+      <select id="filter">
+        <option value="date">Datum</option>
+        <option value="amount">Bedrag</option>
+      </select>
     </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Rekeningnummer</th>
+          <th>Bedrag (€)</th>
+        </tr>
+      </thead>
+      <tbody id="transactionHistory">
+        <tr>
+          <td id="tdp" colspan="3" style="text-align: center;">Geen transacties beschikbaar.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
     <div class="footer">
