@@ -13,7 +13,7 @@
             <img id="logo" src="demon-bank images/RobloxScreenShot20241118_132905772.png" width="100vw">
             
             <ul>
-                <li><a href="home.html">home</a></li>
+                <li><a href="admin.html">home</a></li>
 
                 <li><a href="accounts.html">accounts</a></li>
 
@@ -25,12 +25,31 @@
                     <a href="Solana.html">Solana</a>
                 </div></li>
 
-                <li><a href="inlog.html">log in</a></li>
-
             </ul>
         </nav>
     </header>
     
+    <h1>Overboekingsformulier</h1>
+  <form id="transferForm">
+    <div class="form-group">
+      <label for="account">Rekeningnummer ontvanger:</label>
+      <input type="text" id="account" name="account" required>
+      <div id="accountError" class="error-message">Voer een geldig rekeningnummer in.</div>
+    </div>
+    <div class="form-group">
+      <label for="amount">Bedrag (€):</label>
+      <input type="number" id="amount" name="amount" step="0.01" required>
+      <div id="amountError" class="error-message">Saldo is onvoldoende.</div>
+    </div>
+    <button id="submittrans" type="submit">Overmaken</button>
+  </form>
+  <div id="feedback" class="success-message">
+    Transactie geslaagd! 🎉
+    <div class="feedback">
+      <img src="https://via.placeholder.com/100" alt="Bevestigingsafbeelding">
+    </div>
+  </div>
+
     <div class="footer">
         <p class="credits">support demon his channel while you can😈</p>
         <p>⬇️⬇️⬇️⬇️⬇️⬇️</p>
