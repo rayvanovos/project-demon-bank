@@ -134,3 +134,69 @@ const transactions = []; // Array voor het opslaan van transacties
 
     // Filter functionaliteit
     filter.addEventListener('change', updateTransactionHistory);
+
+    let balance = 760.0;
+    let currentPrice = 120.0;
+    let ownedUnits = 2;
+
+    function updatePrice() {
+      // Simuleer prijsveranderingen
+      currentPrice = (Math.random() * 100 + 100).toFixed(2);
+      document.getElementById("currentPrice").textContent = currentPrice;
+    }
+
+    function buy() {
+      console.log
+      document.querySelector(".buy").addEventListener("click", buy);
+      const amount = parseFloat(document.getElementById("amount").value);
+      const totalCost = amount * currentPrice;
+
+      if (!amount || amount <= 0) {
+        showMessage("Voer een geldig bedrag in.");
+        return;
+      }
+
+      if (totalCost > balance) {
+        showMessage("Onvoldoende saldo om deze aankoop te doen.");
+        return;
+      }
+
+      balance -= totalCost;
+      ownedUnits += amount;
+      updateUI();
+      showMessage(`Je hebt €${totalCost.toFixed(2)} geïnvesteerd in ${document.getElementById("product").value}.`, false);
+    }
+
+    function sell() {
+      const amount = parseFloat(document.getElementById("amount").value);
+
+      if (!amount || amount <= 0) {
+        showMessage("Voer een geldig bedrag in.");
+        return;
+      }
+
+      if (amount > ownedUnits) {
+        showMessage("Je bezit niet genoeg eenheden om te verkopen.");
+        return;
+      }
+
+      const totalGain = amount * currentPrice;
+      balance += totalGain;
+      ownedUnits -= amount;
+      updateUI();
+      showMessage(`Je hebt €${totalGain.toFixed(2)} verdiend door te verkopen.`, false);
+    }
+
+    function showMessage(msg, isError = true) {
+      const message = document.getElementById("message");
+      message.textContent = msg;
+      message.style.color = isError ? "red" : "green";
+    }
+
+    function updateUI() {
+      document.getElementById("balance").textContent = balance.toFixed(2);
+      document.getElementById("ownedUnits").textContent = ownedUnits;
+    }
+
+    // Prijs dynamisch bijwerken elke 5 seconden
+    setInterval(updatePrice, 5000);

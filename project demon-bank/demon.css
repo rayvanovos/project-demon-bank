@@ -1,11 +1,19 @@
-#logo{
-    float: left;
-    position: fixed;
+header {
+  background-color: crimson;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-header{
-    background-color: crimson;
-    height: 100px;
+#logo {
+  margin-right: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 body{
@@ -20,49 +28,11 @@ main{
     text-align: center;
   }
 
-ul{
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-}
-
-li{
-    padding: 5vh;
-    flex-wrap: wrap;
-}
-
 a{
     color: white;
     font-size: 30px;
     text-decoration: none;
 }
-
-.DropDown:hover .DropDownContent {
-    display: block;
-    display: flex;
-    flex-direction: column;
-    }
-    
-    .DropDown:hover {
-        margin-bottom: px;
-        background-color: crimson;
-    }
-    
-    .DropDown:hover a {
-        color: white;
-    }
-    
-    .DropDownMenuItem:hover {
-        background-color: black;
-    }
-    
-    .DropDownContent {
-    display: none;
-    position: absolute;
-    background-color: crimson;
-    min-width: 8vw;
-    
-    }
 
     .footer {
         left: 0;
@@ -71,9 +41,8 @@ a{
         background-color: crimson;
         color: white;
         text-align: center;
-       margin-top: 60vh;
+        margin-top: 60vh;
         bottom: 0;
-        position: fixed;
      }
 
      #dateDisplay {
@@ -217,4 +186,57 @@ a{
       }
       #tdp{
         color: white;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: black;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .warning {
+        color: red;
+        font-weight: bold;
+      }
+      .balance {
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button.buy {
+        background-color: #4CAF50;
+        color: white;
+      }
+      button.sell {
+        background-color: #f44336;
+        color: white;
+      }
+      select, input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      #container{
+        color: black;
+      }
+
+      .label2{
+        color: black;
       }
