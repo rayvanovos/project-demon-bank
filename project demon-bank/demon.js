@@ -32,6 +32,11 @@ else{
 }
 
 
+
+
+
+
+
 const availableBalance = 500000; // Huidig saldo
 
 document.getElementById('transferForm').addEventListener('submit', function (event) {
@@ -66,6 +71,13 @@ document.getElementById('transferForm').addEventListener('submit', function (eve
     document.getElementById('transferForm').reset();
   }
 });
+
+
+
+
+
+
+
 
 
 const transactions = []; // Array voor het opslaan van transacties
@@ -135,6 +147,13 @@ const transactions = []; // Array voor het opslaan van transacties
     // Filter functionaliteit
     filter.addEventListener('change', updateTransactionHistory);
 
+
+
+
+
+
+
+
     let balance = 760.0;
     let currentPrice = 120.0;
     let ownedUnits = 2;
@@ -200,3 +219,71 @@ const transactions = []; // Array voor het opslaan van transacties
 
     // Prijs dynamisch bijwerken elke 5 seconden
     setInterval(updatePrice, 5000);
+
+
+
+
+
+
+    let cryptoBalance = 2; // Aantal cryptomunten in bezit
+let cryptoPrice = 150.0; // Startprijs per munt
+let fiatBalance = 1000.0; // Begin saldo in euro
+
+function updateCryptoPrice() {
+  cryptoPrice = (Math.random() * 50 + 100).toFixed(2); // Willekeurige prijs tussen 100 en 150
+  document.getElementById("cryptoPrice").textContent = `€${cryptoPrice}`;
+}
+
+function buyCrypto() {
+  const amount = parseFloat(document.getElementById("cryptoAmount").value);
+  const totalCost = amount * cryptoPrice;
+
+  if (!amount || amount <= 0) {
+    showMessage("Voer een geldig aantal munten in.");
+    return;
+  }
+
+  if (totalCost > fiatBalance) {
+    showMessage("Onvoldoende saldo om deze aankoop te doen.");
+    return;
+  }
+
+  fiatBalance -= totalCost;
+  cryptoBalance += amount;
+  updateCryptoUI();
+  showMessage(`Je hebt ${amount} cryptomunten gekocht voor €${totalCost.toFixed(2)}.`, false);
+}
+
+function sellCrypto() {
+  const amount = parseFloat(document.getElementById("cryptoAmount").value);
+
+  if (!amount || amount <= 0) {
+    showMessage("Voer een geldig aantal munten in.");
+    return;
+  }
+
+  if (amount > cryptoBalance) {
+    showMessage("Je bezit niet genoeg munten om te verkopen.");
+    return;
+  }
+
+  const totalGain = amount * cryptoPrice;
+  fiatBalance += totalGain;
+  cryptoBalance -= amount;
+  updateCryptoUI();
+  showMessage(`Je hebt ${amount} cryptomunten verkocht voor €${totalGain.toFixed(2)}.`, false);
+}
+
+function showMessage(msg, isError = true) {
+  const message = document.getElementById("cryptoMessage");
+  message.textContent = msg;
+  message.style.color = isError ? "red" : "green";
+}
+
+function updateCryptoUI() {
+  document.getElementById("cryptoBalance").textContent = cryptoBalance;
+  document.getElementById("fiatBalance").textContent = fiatBalance.toFixed(2);
+}
+
+// Prijs elke 5 seconden updaten
+setInterval(updateCryptoPrice, 5000);

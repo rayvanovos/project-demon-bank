@@ -46,7 +46,6 @@ a{
      }
 
      #dateDisplay {
-        position: fixed;
         bottom: 10px;
         right: 10px;
         font-size: 20px;
@@ -240,3 +239,5 @@ a{
       .label2{
         color: black;
       }
+
+      
